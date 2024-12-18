@@ -1,11 +1,11 @@
 import { Component, HostListener, ChangeDetectionStrategy,  signal} from '@angular/core';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-zikir',
+  templateUrl: './zikir.component.html',
+  styleUrls: ['./zikir.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
+export class ZikirComponent {
   total = 0;
   gridCols = 4;
   gridButtonColumns = 4
