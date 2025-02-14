@@ -1,4 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
-
+@use '@angular/material' as mat;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    color-scheme: light dark;
+  }
+  body {
+    color: light-dark(#333b3c, #efefec);
+    background-color: light-dark(#efedea, #223a2c);
+  }
+
+  mat-grid-list {
+    max-width: 800px; /* Set your desired max-width */
+    margin: 0 auto; /* Center the grid list horizontally if needed */
+  }
+
+  mat-grid-tile {
+    border: 2px solid #7d1bae; /* Black border */
+    border-radius: 4px;     /* Optional: Rounded corners */
+    box-sizing: border-box; /* Ensure border is included in the tile size */
+    background: linear-gradient(135deg, #00796b, #48a999); /* Gradient background */
+    color: #ffffff;
+    text-align: center; /* Center the content */
+    border-radius: 4px; /* Rounded corners for a modern look */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Add subtle depth */
+    transition: transform 0.2s, box-shadow 0.2s; 
+  }
+
+ button {
+    width: 100%;
+    height: 100%;
+  }

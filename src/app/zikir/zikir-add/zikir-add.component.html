@@ -1,0 +1,54 @@
+<form #zikirForm="ngForm" (ngSubmit)="onSubmit()">
+<mat-grid-list [cols]="1" rowHeight="100px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#03A9F4'">
+        <h1>New Zikir</h1>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#03A9F4'">
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Zikir Name</mat-label>
+            <input required [(ngModel)]="zikir.name" name="name" matInput>
+            <mat-error>{{"Zikir Name is required"}}</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#03A9F4'" >
+        <div layout="row">
+            <input #svgInput hidden="true" type="file" onclick="this.value=null" (change)="csvInputChange($event)" accept=".svg" name="svginput" />
+            <button mat-flat-button color="primary" (click)="svgInput.click()">Choose svgContent (SVG)*</button>
+            <p *ngIf="isFormSelected">{{fileName || 'no file selected'}}</p>
+            <mat-error *ngIf="!isFormSelected">{{"SvgContent is required"}}</mat-error>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#03A9F4'">
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Cycle</mat-label>
+            <input [(ngModel)]="zikir.cycle" matInput type="number" name="cycle"/>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#03A9F4'">
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Description</mat-label>
+            <input [(ngModel)]="zikir.description" matInput name="description"/>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#03A9F4'">
+        <div>
+            <button type="submit" mat-fab extended style="background-color: #4527A0; color: aliceblue;">
+                <mat-icon>send</mat-icon>
+                Submit
+            </button>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#03A9F4'">
+        <div>
+            <button (click)="onBack()" mat-fab extended style="background-color: #4527A0; color: aliceblue;">
+                <mat-icon>arrow_back_ios_new</mat-icon>
+                Go Back
+            </button>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+</form>

@@ -1,0 +1,51 @@
+
+<mat-grid-list [cols]="1" rowHeight="100px" >
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"
+    [style.background]="'#03A9F4'">
+    <h1>Welcome</h1>
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"
+    [style.background]="'#03A9F4'">
+    <mat-form-field  appearance="outline" style="width: 100%;">
+        <mat-label>User Name</mat-label>
+        <input required [(ngModel)]="userName" matInput>
+        <mat-error>{{"User Name is required"}}</mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+    
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"
+    [style.background]="'#03A9F4'">
+    <mat-form-field  appearance="outline" style="width: 100%;">
+        <mat-label>Password</mat-label>
+        <input required [(ngModel)]="password" matInput [type]="hide() ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+        >
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error>{{"Password is required"}}</mat-error>
+      </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile
+  [colspan]="1"
+  [rowspan]="1"
+  [style.background]="'#03A9F4'">
+  <div>
+    <button (click)="onClick()" mat-fab extended style="background-color: #4527A0; color: aliceblue;">
+      <mat-icon>login</mat-icon>
+      Login
+    </button>
+  </div>
+  </mat-grid-tile>
+  </mat-grid-list>

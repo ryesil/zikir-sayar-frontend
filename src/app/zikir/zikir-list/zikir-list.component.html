@@ -1,0 +1,29 @@
+<!-- <div appResponsiveGrid (gridColsChange)="updateGridCols($event)"> -->
+  <mat-grid-list [cols]="1" rowHeight="50px">
+    <mat-grid-tile [colspan]="1" [rowspan]="2" (click)="onClick(zikir['id'])"  *ngFor="let zikir of zikirs">
+        <div style="display: flex; flex-direction: row; width: 100%; height: 100%;">
+          <div style="display: flex; flex-direction: column;">
+            <div>
+              {{zikir.name}}
+            </div>
+            <div>
+              {{zikir.amount}}
+            </div>
+          </div>
+          <div>
+        
+          </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button (click)="onLogout()" mat-button class="tile-button">Logout<mat-icon class="icon-right">
+          logout
+        </mat-icon></button>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="isAdmin()" [colspan]="1" [rowspan]="1">
+      <button (click)="addZikir()" mat-button class="tile-button">Add Zikir<mat-icon class="icon-right">
+          library_add
+        </mat-icon></button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list [cols]="1" rowHeight="50px">

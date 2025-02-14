@@ -1,0 +1,26 @@
+<mat-grid-list [cols]="1" rowHeight="50px">
+    <mat-grid-tile [colspan]="1" [rowspan]="3" [style.background]="'#CDDC39'"><img [src]="zikir.svgContent"
+        alt="zikir SVG" style="width: 100%; height: 100%;" />
+    </mat-grid-tile>
+    <mat-grid-tile display-4 [colspan]="1" [rowspan]="1" [style.background]="'#AFB42B'">
+      <h1>{{total()}}</h1>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" rowHeight="50px" [style.background]="'#CDDC39'"><button
+        (click)="onCount()" mat-button style="width: 100%; height: 100%;">
+        <mat-icon>add_circle</mat-icon>
+        Count
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" rowHeight="50px" [style.background]="'#CDDC39'"><button
+        (click)="onReset()" mat-button style="width: 100%; height: 100%;">
+        <mat-icon>restart_alt</mat-icon>
+        Restart
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" rowHeight="50px" [style.background]="'#CDDC39'"><button
+        (click)="onSubmit()" mat-button style="width: 100%; height: 100%;">
+        <mat-icon>keyboard_return</mat-icon>
+        Submit
+      </button>
+    </mat-grid-tile>
+</mat-grid-list>
