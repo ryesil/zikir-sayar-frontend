@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, OnInit, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, EventEmitter } from '@angular/core';
 import { AuthGuardService } from 'src/app/services/authGuard.service';
 
 @Component({
@@ -7,22 +7,17 @@ import { AuthGuardService } from 'src/app/services/authGuard.service';
   styleUrls: ['./auth.component.scss'],
   changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent {
 
   loggedIn = new EventEmitter<boolean>(false);
-  userName!: string;
-  password!: string;
+  userName = '';
+  password = '';
+  hide = signal(true);
 
   constructor(private authGuardService : AuthGuardService){
 
   }
-
-  ngOnInit(): void {
-    this.userName = '';
-    this.password = '';
-  }
-
-  hide = signal(true);
+  
   clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
@@ -30,7 +25,7 @@ export class AuthComponent implements OnInit {
 
 
   onClick(): void{
-    this.authGuardService.canLogin(this.userName, this.password);
+    this.authGuardService.login(this.userName, this.password);
   }
 
 

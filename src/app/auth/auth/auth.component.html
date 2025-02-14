@@ -12,7 +12,8 @@
     [style.background]="'#03A9F4'">
     <mat-form-field  appearance="outline" style="width: 100%;">
         <mat-label>User Name</mat-label>
-        <input [(ngModel)]="userName" matInput>
+        <input required [(ngModel)]="userName" matInput>
+        <mat-error>{{"User Name is required"}}</mat-error>
       </mat-form-field>
     </mat-grid-tile>
     
@@ -22,7 +23,7 @@
     [style.background]="'#03A9F4'">
     <mat-form-field  appearance="outline" style="width: 100%;">
         <mat-label>Password</mat-label>
-        <input [(ngModel)]="password" matInput [type]="hide() ? 'password' : 'text'" />
+        <input required [(ngModel)]="password" matInput [type]="hide() ? 'password' : 'text'" />
         <button
           mat-icon-button
           matSuffix
@@ -32,6 +33,7 @@
         >
           <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
+        <mat-error>{{"Password is required"}}</mat-error>
       </mat-form-field>
   </mat-grid-tile>
 

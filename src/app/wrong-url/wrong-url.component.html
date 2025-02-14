@@ -1,0 +1,29 @@
+<mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile
+        [colspan]="4"
+        [rowspan]="1"
+        [style.background]="'white'"><h2>Opss Uknown URL</h2></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        >
+        <div>
+            <button (click)="onLogout()" mat-fab extended>
+              <mat-icon>logout</mat-icon>
+              Logout
+            </button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        >
+        <div>
+            <button (click)="onGoback()" mat-fab extended>
+              <mat-icon>keyboard_return</mat-icon>
+              Go Back
+            </button>
+          </div>
+        </mat-grid-tile>
+  </mat-grid-list>

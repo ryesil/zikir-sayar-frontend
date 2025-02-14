@@ -23,19 +23,4 @@ export class AppComponent {
 
   displayedColumns: string[] = ['name', 'amount', 'date'];
 
-
-
-@HostListener('window:resize')
-onReSize(){
-  const width = window.innerWidth;
-  if(width< 600){
-    this.gridCols = 4;
-  } else if( width < 960){
-    this.gridCols = 2;
-  } else {
-    this.gridCols = 1;
-  }
-
-}
-
 }
